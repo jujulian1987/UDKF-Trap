@@ -2,14 +2,19 @@
 
 This repository shall demonstrate how to implement a trap which works in multiplayer and is spawned by the player via unreal script.
 
-Here are the details which we are are trying to achieve:
+#### Here are the details which we are are trying to achieve:
 
+##### Already working:
 * player can spawn a trap that deals dmg to other players or himself
-* trap can be configured to deal damage to enemy players only
 * trap is fully functionally in multiplayer even when someone rejoins the server
+
+##### Not yet working:
+* trap can be configured to deal damage to enemy players only
 * trap spawn has a cooldown
 * traps disappear after a cooldown
 * traps do not stack damage
+
+##### Quick video demonstration: http://youtu.be/F9xohccbNKg
 
 ## What do I need to get this working?
 
@@ -54,6 +59,8 @@ I included 2 bat files:
 
 With the LOCAL SERVER a dedicated server will be started. With LOCAL CLIENT a client will join the server. You can even start two clients or more to test if everything is working.
 To Spawn a Trap fire up the console and type SpawnTrap with the MousePointer headed to the position you want the Trap to appear.
+
+## Get in Touch
 
 ### Questions and Feedback
 
