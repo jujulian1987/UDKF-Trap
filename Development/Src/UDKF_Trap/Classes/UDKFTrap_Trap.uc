@@ -1,13 +1,11 @@
 class UDKFTrap_Trap extends Actor;
 
-var StaticMeshComponent smcTrap;
-var Controller trapOwner;
-var bool bActivated;
-
 event Bump( Actor Other, PrimitiveComponent OtherComp, Vector HitNormal ){
+	local UTPlayerController OwnerPlayerController;
     if(Other.Class == class'UDKFTrap_Pawn'){
         `log("Bumped Trap!");
-        Other.TakeDamage(30,trapOwner,self.Location,self.Location,class'DamageType');
+		OwnerPlayerController = UTPlayerController(Owner);
+        Other.TakeDamage(30,OwnerPlayerController,self.Location,self.Location,class'DamageType');
         self.Destroy();
     }
     
@@ -22,9 +20,7 @@ defaultproperties
         bUsePrecomputedShadows=TRUE
     End Object
     Components.Add(StaticMeshComponent0)
-    
-    bAlwaysRelevant=true
+	RemoteRole=ROLE_SimulatedProxy
     bCollideActors=true
     bBlockActors=true
-    bActivated=false
 }
